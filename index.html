@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- Core css -->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">
+                <img src="/assets/Logo-bg" alt="" width="50%" height="50%">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html" >About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          More
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                          <li><a class="dropdown-item" href="#">Newsletter</a></li>
+                          <li><a class="dropdown-item" href="#">About Us</a></li>
+                        </ul>
+                      </li>
+                </ul>
+                <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-secondary">Login</button>
+                <button onclick="document.getElementById('id02').style.display='block'" class="btn btn-secondary">Sign Up</button>
+                <form class="d-flex">
+                    <button class="btn btn-outline-dark" type="submit">
+                        <i class="bi-cart-fill me-1"></i>
+                        Cart
+                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+<!-- Category buttons -->
+<div class="category-links">
+    <h3>Featured Collections:</h3>
+<a href="products.html?category=office" target="products-frame"><button type="button" class="btn btn-outline-secondary">Office Chairs</button></a>
+<a href="products.html?category=gaming" target="products-frame"><button type="button" class="btn btn-outline-secondary">Gaming Chairs</button></a>
+<a href="products.html?category=stools" target="products-frame"><button type="button" class="btn btn-outline-secondary">Stools</button></a>
+</div>
+
+
+    <!-- products collection -->
+    <div>
+        <div class="products-frame">
+            <iframe class="frames" name="products-frame" frameborder="0" src="products.html?category=office"></iframe>
+        </div>
+    </div>
+    
+    <!-- Login modal -->
+    <div id="id01" class="modal">
+      
+      <form class="modal-content">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="assets/img_avatar2.png" alt="Avatar" class="avatar">
+        </div>
+    
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" id="unameLogin" required>
+    
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" id="pswLogin" required>
+            
+          <button type="submit" class="button-modal" name="submitLogin">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
+    </div>
+
+    <!-- Sign up modal --> 
+    <div id="id02" class="modal">
+      
+      <form class="modal-content">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="assets/img_avatar2.png" alt="Avatar" class="avatar">
+        </div>
+    
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" id="unameSign" required>
+    
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" id="passSign" required>
+
+          <label for="psw"><b>Re-enter Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" id="rePassSign" required>
+
+          <label for="uname"><b>City</b></label>
+          <input type="text" placeholder="Enter City" name="city" id="citySign">
+
+          <label for="uname"><b>Phone</b></label>
+          <input type="text" placeholder="Enter Phone" name="phone" id="phoneSign">
+            
+          <button type="submit" class="button-modal" name="submitSign">Sign Up</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+    
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
+    </div>
+
+    <!-- Core JS-->
+    <script src="/js/scripts.js"></script>
+    <!-- Bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>
